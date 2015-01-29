@@ -6,8 +6,9 @@
 // +----------------------------------------------------------------------
 // | Author: Helaoshi
 // +----------------------------------------------------------------------
+namespace Home\Model;
 
-class GoodsModel extends BaseModel {
+class GoodsModel extends  BaseModel {
     /**
      * 获取频道下商品信息
      * @param  int $cid 频道ID
