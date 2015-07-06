@@ -1,15 +1,18 @@
 <?php
 
-//生成安全文件
-define('BUILD_DIR_SECURE',true);
-define('DIR_SECURE_FILENAME', 'index.html,index.htm');
-define('DIR_SECURE_CONTENT', 'deney Access!');
+// 应用入口文件
 
-define('APP_DEBUG', true);//开发完后删除此定义
-define('APP_NAME', 'HomeAPP');
-define('APP_PATH', './HomeApp/');
-define('STYLE_PATH', '/raffles/HomeApp/');
-define('UPLOAD_PATH', './Upload');
-define('RUNTIME_PATH', './_runtime/home/');
-// 加载框架入口文件
-require( "./core/core.php");
+// 检测PHP环境
+if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
+
+// 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
+define('APP_DEBUG',True);
+
+// 定义应用目录
+define('APP_PATH','./Home/');
+
+// 定义环境
+define('APP_STATUS','product');
+
+// 引入ThinkPHP入口文件
+require './core/ThinkPHP.php';
