@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<script type="text/javascript"src="__PUBLIC__/js/ajaxupload.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	var button = $('#upload_button'), interval;
+	new AjaxUpload(button,{
+		action : "{:U('Upload/upload')}",
+		
+	});
+});
+</script>
+</head>
+<body>
+	<form action="" type="post">
+	<div class="controls" style="text-align: left;">
+	<img id="newbikephoto" src="./Uploads/images/nophoto.jpg" style="max-height: 200px;" /> 
+		<input type="button" class="btn btn-primary" id="upload_button" value="上传图片" />
+		<br />
+	</div>
+	</form>
+</body>
+</html>
