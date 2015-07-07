@@ -7,6 +7,6 @@ class IndexController extends Controller {
     public function index(){
         $brand = D('Brand')->getBrandList();
     	$this->assign("data",$brand);
-        $this->show();
+        $this->display();
     }
 }
