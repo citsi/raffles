@@ -85,10 +85,10 @@
 		    <div id="pf-filter">
                 <ul>
                     <li><a href="" class="selected" data-filter="*">产品分类</a></li>
-                    <li><a href="" data-filter=".print">硒鼓</a></li>
-                    <li><a href="" data-filter=".web">墨盒</a></li>
-                    <li><a href="" data-filter=".motion">打印机</a></li>
-					<li><a href="" data-filter=".motion">扫描仪</a></li>
+                    <li><a href="{:U('home/product/index/'.'?cateId='.$cate['id'])}" data-filter=".motion">全部</a></li>
+                    <volist name="data" id="cate">
+                    <li><a href="{:U('home/product/index/'.'?cateId='.$cate['id'])}" data-filter=".motion">{$cate.catename}</a></li>
+                    </volist>
                 </ul>
             </div>
 			
@@ -110,27 +110,18 @@
             <!-- divider line end here -->
             
             <ul class="pf-box-4col">
+
+                <volist name="list" id="goods"  empty="暂时没有数据" >
                 <li class="web motion">
                     <span class="link-zoom"> 
-                        <a class="fancybox" href="images/portfolio-big/pf-big.jpg" data-fancybox-group="gallery" title="Hyperion"><img src="images/portfolio-thumb/p1.jpg" alt="" class="fade" /></a>                        
+                        <a class="fancybox" href="{:U('Article/detail?id='.$list['id'])}" data-fancybox-group="gallery" title="Hyperion"><img src="images/portfolio-thumb/p2.jpg" alt="" class="fade" /></a>
                     </span>
-                    <h5>Project Name 1</h5>
+                    <h5>{$goods.goods_name}</h5>
                     <p>Exercitationem corporis suscipit laboriosam aliquid commodi consequatur molestiae</p>            
                 </li>
-                <li class="motion">
-                    <span class="link-zoom"> 
-                        <a class="fancybox" href="images/portfolio-big/pf-big.jpg" data-fancybox-group="gallery" title="Hyperion"><img src="images/portfolio-thumb/p2.jpg" alt="" class="fade" /></a>                        
-                    </span>
-                    <h5>Project Name 2</h5>
-                    <p>Exercitationem corporis suscipit laboriosam aliquid commodi consequatur molestiae</p>                
-                </li>
-                <li class="web print">
-                    <span class="link-zoom"> 
-                        <a class="fancybox" href="images/portfolio-big/pf-big.jpg" data-fancybox-group="gallery" title="Hyperion"><img src="images/portfolio-thumb/p3.jpg" alt="" class="fade" /></a>                        
-                    </span>
-                    <h5>Project Name 3</h5>
-                    <p>Exercitationem corporis suscipit laboriosam aliquid commodi consequatur molestiae</p>
-                </li>
+                </volist>
+
+
                 <li class="web">
                     <span class="link-zoom"> 
                         <a class="fancybox" href="images/portfolio-big/pf-big.jpg" data-fancybox-group="gallery" title="Hyperion"><img src="images/portfolio-thumb/p4.jpg" alt="" class="fade" /></a>                        
