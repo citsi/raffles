@@ -17,12 +17,11 @@ class ProductController extends Controller
         $cate = D('Category')->getCategoryList();
         $this->assign("data",$cate);
 
-<<<<<<< HEAD
+
         $brand = D('Brand')->getBrandList();
         $this->assign("brand",$brand);
 
-=======
->>>>>>> origin/master
+
 
         $goods = D('Goods')->getGoodsList();
         $this->assign("list",$goods);

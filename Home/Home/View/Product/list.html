@@ -45,6 +45,8 @@
 <script src="js/jflickrfeed.min.js"></script>
 <script src="js/faq-functions.js"></script>
 <script src="js/theme-functions.js"></script>
+<script src="js/menu.js"></script>
+
 
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,6 +76,20 @@
         </ul>
     </div>
 </section>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("a.search_btn").click(function(){
+            var words=$("input.search_input").val();
+            if(words){document.Searchform.submit();
+            }
+            else{
+                alert("搜索内容不能为空")
+            }
+
+
+        });
+    });
+</script>
 <!-- breadcrumb end here -->
 
 <!-- maincontent start here -->
@@ -101,7 +117,13 @@
                     </volist>
                 </ul>
             </div>
-            
+            <div class="search">
+                <form action="{:U("Search/index")}" name="Searchform"  method="post" >
+
+                <p>
+                    <input type="text" name="words" placeholder="输入您想要的商品" class="search"><a rel="nofollow" href="javascript:vod(0)" class="search_btn">search</a></p>
+                <input type="hidden" name="type" id="type" value="1"></form>
+            </div>
              <!-- divider line start here -->
              <div class="row">
                 <div class="twelve columns">

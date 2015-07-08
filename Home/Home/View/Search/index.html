@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<volist name="list" id="list" empty="暂时没有数据" >
+    <li class="face" onmouseover="this.className='facehover'" onmouseout="this.className='face'">
+        <a href="{:U('Article/detail?id='.$list['id'])}" class="list-img">{$list.goods_name} </a>
+        <p> <a href="{:U('Article/detail?id='.$list['id'])}" class="t2"></a></p>
+
+    </li>
+</volist>
+</body>
+</html>
